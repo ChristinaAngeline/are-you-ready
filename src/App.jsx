@@ -8,9 +8,9 @@ import { routerMiddleware, routerReducer, syncHistoryWithStore } from 'react-rou
 
 import MainTemplate from './templates/main/Main';
 
-import HomePage from './pages/home/Home';
-import AboutPage from './pages/about/About';
-import ContactPage from './pages/contact/Contact';
+import HomePage from './pages/home/Personal Information';
+import AboutPage from './pages/about/Formation Chart';
+import ContactPage from './pages/contact/Attendance';
 
 import './App.css';
 
