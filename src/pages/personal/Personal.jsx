@@ -1,5 +1,5 @@
+import firebase from 'firebase';
 import React, { Component } from 'react';
-
 import styles from './Personal.css';
 
 class PersonalPage extends Component {
@@ -19,7 +19,7 @@ class PersonalPage extends Component {
     alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
   }
-  
+
   render() {
     return (
       <div className={styles.personal}>

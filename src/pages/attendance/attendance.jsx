@@ -1,5 +1,5 @@
+import firebase from 'firebase';
 import React, { Component } from 'react';
-
 import styles from './attendance.css';
 
 class AttendancePage extends Component {
