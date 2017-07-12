@@ -23,6 +23,10 @@ class Header extends Component {
         {
           text: 'Attendance',
           url: 'Attendance'
+        },
+        {
+          text:'Employee Info',
+          url:'Employee'
         }
       ]
     };

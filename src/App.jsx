@@ -12,7 +12,7 @@ import HomePage from './pages/home/Home';
 import PersonalPage from './pages/personal/Personal';
 import FormationPage from './pages/formation/Formation';
 import AttendancePage from './pages/attendance/Attendance';
-
+import EmployeesPage from './pages/employee/Employee';
 
 import './App.css';
 
@@ -37,6 +37,7 @@ render(
       <Route component={PersonalPage} path="personal" />
       <Route component={FormationPage} path="formation" />
       <Route component={AttendancePage} path="attendance" />
+      <Route component={EmployeesPage} path="employee" />
     </Route>
   </Router>,
   document.getElementById('app')

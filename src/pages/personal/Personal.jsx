@@ -1,14 +1,37 @@
 import React, { Component } from 'react';
 
-import styles from './About.css';
+import styles from './Personal.css';
 
 class PersonalPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+  
   render() {
     return (
-      <div className={styles.about}>
+      <div className={styles.personal}>
         <section>
           <h1>Personal Information</h1>
-          <p>This is some text...</p>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Name:
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
         </section>
       </div>
     );
