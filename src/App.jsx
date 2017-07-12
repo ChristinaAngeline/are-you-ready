@@ -8,9 +8,11 @@ import { routerMiddleware, routerReducer, syncHistoryWithStore } from 'react-rou
 
 import MainTemplate from './templates/main/Main';
 
-import HomePage from './pages/home/Personal Information';
-import AboutPage from './pages/about/Formation Chart';
-import ContactPage from './pages/contact/Attendance';
+import HomePage from './pages/home/Home';
+import PersonalPage from './pages/personal/Personal';
+import FormationPage from './pages/formation/Formation';
+import AttendancePage from './pages/attendance/Attendance';
+
 
 import './App.css';
 
@@ -32,8 +34,9 @@ render(
   <Router history={history}>
     <Route path={CONFIG.baseHref} component={MainTemplate}>
       <IndexRoute component={HomePage} />
-      <Route component={AboutPage} path="about" />
-      <Route component={ContactPage} path="contact" />
+      <Route component={PersonalPage} path="personal" />
+      <Route component={FormationPage} path="formation" />
+      <Route component={AttendancePage} path="attendance" />
     </Route>
   </Router>,
   document.getElementById('app')

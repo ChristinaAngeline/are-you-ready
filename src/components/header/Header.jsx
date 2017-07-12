@@ -9,16 +9,20 @@ class Header extends Component {
     this.state = {
       menuItems: [
         {
-          text: 'Personal Information',
+          text: 'Home',
           url: '/'
         },
         {
+          text: 'Personal Information',
+          url: 'Personal'
+        },
+        {
           text: 'Formation Chart',
-          url: 'about'
+          url: 'Formation'
         },
         {
           text: 'Attendance',
-          url: 'contact'
+          url: 'Attendance'
         }
       ]
     };
