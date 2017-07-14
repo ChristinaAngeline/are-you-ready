@@ -5,20 +5,42 @@ import styles from './Home.css';
 class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+      // login
+      militaryEmail: '',
+      password:''
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    };
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+    handleInput({ target: {name, value}}) {
+      this.setState({
+        [name]: value
+      });
+    }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
+    handleSubmit(e) {
+
+      e.preventDefault();
+      firebase.database()
+      .ref('/UserInfo')
+      .push({
+
+        // login
+        militaryEmail: this.state.militaryEmail,
+        password:this.state.password
+
+      })
+
+      .then(() => {
+        this.setState({
+          // login
+          militaryEmail: '',
+          password:''
+
+        });
+      });
+    }
 
   render() {
     return (
@@ -26,11 +48,15 @@ class HomePage extends Component {
         <section>
           <h1>Sign Up</h1>
           <form onSubmit={this.handleSubmit}>
-           <label>
-             Email:
-             <input type="text" value={this.state.value} onChange={this.handleChange} />
-           </label>
-           <input type="submit" value="Submit" />
+           <label htmlFor="militaryEmail"> Military Email:
+             <input name="militaryEmail" value={this.state.militaryEmail} onChange={this.handleChange} />
+             </label>
+
+          <label htmlFor="password">Password:
+           <input name="password" value={this.state.password} onChange={this.handleChange}/>
+          </label>
+
+          <input type="submit" value="Submit" />
          </form>
         </section>
       </div>

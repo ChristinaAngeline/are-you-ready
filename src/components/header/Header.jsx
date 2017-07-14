@@ -40,7 +40,8 @@ class Header extends Component {
     return (
       <div className={styles.header}>
         <section>
-          <div className={styles.logo} />
+          <div className={styles.logo}>
+          <img src="./images/logo.svg" alt="logo" />
           <ul>
             {this.state.menuItems.map((menuItem) => {
               return (
@@ -52,6 +53,7 @@ class Header extends Component {
               );
             })}
           </ul>
+          </div>
         </section>
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Contact.css';
+import styles from './formation.css';
 
 class FormationPage extends Component {
   render() {
@@ -7,7 +7,9 @@ class FormationPage extends Component {
       <div className={styles.contact}>
         <section>
           <h1>Formation Chart</h1>
-          <p>This is some text...</p>
+          <div className={styles.formation}>
+            <img src="./images/formation.png" alt="formation" />
+          </div>
         </section>
       </div>
     );

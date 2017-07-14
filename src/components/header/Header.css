@@ -4,15 +4,18 @@
 
 .header a {
   color: #FFF;
+  padding: 10px;
 }
+
 
 .header li {
   display: inline-block;
   margin-left: 10px;
+
 }
 
 .header section {
-  padding: 0;
+  padding: 10px;
 }
 
 .header ul {
@@ -24,16 +27,25 @@
 }
 
 .logo {
-  background-image: url(images/logo.html);
-  background-position: center;
-  background-repeat: no-repeat;
+  /*this is for doing a hero image*/
+  /*background-image: url(images/logo.html);*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
-  height: 50px;
-  width: 50px;
-  vertical-align: middle;
+  height: 5px;
+  width: 5px;*/
+  /*vertical-align: middle;*/
 }
+
+
 
 .App-logo {
   height: 80px;
+}
+
+
+.logo img {
+  height: 100px;
+  width: 100px;
 }

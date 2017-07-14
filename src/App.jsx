@@ -18,12 +18,12 @@ import EmployeesPage from './pages/employee/Employee';
 import './App.css';
 
 firebase.initializeApp({
-  apiKey: "AIzaSyCIA-rnORwnlCelobIEeBhxm75FQ6SJeQE",
-  authDomain: "are-you-ready-9bede.firebaseapp.com",
-  databaseURL: "https://are-you-ready-9bede.firebaseio.com",
-  projectId: "are-you-ready-9bede",
-  storageBucket: "are-you-ready-9bede.appspot.com",
-  messagingSenderId: "687208054267"
+  apiKey: "AIzaSyCOdtwSelBlLRlW757O4GO7QLevxav0G1s",
+  authDomain: "areyouready-f2120.firebaseapp.com",
+  databaseURL: "https://areyouready-f2120.firebaseio.com",
+  projectId: "areyouready-f2120",
+  storageBucket: "areyouready-f2120.appspot.com",
+  messagingSenderId: "192825788710"
 });
 
 
