@@ -48,12 +48,14 @@ class PersonalPage extends Component {
       dateOfLastEvaluation: '',
 
       // Army Physical Fitness Test(APFT)
+      apftDate: '',
+      apftDateExpire: '',
       total: '',
       passFail:'',
       pushups: '',
       situps: '',
       run: '',
-      alternateRun: '',
+      alternateRunScore: '',
       alternateEvent: '',
       profileType: '',
       ifTempExperationDate: '',
@@ -126,12 +128,14 @@ class PersonalPage extends Component {
         dateOfLastEvaluation: this.state.dateOfLastEvaluation,
 
         // Army Physical Fitness Test(APFT)
+        apftDate: this.state.total,
+        apftDateExpire: this.state.apftDateExpire,
         total: this.state.total,
         passFail: this.state.passFail,
         pushups: this.state.pushups,
         situps: this.state.situps,
         run: this.state.run,
-        alternateRun: this.state.alternateRun,
+        alternateRunScore: this.state.alternateRunScore,
         alternateEvent: this.state.alternateEvent,
         profileType: this.state.profileType,
         ifTempExperationDate: this.state.ifTempExperationDate,
@@ -191,12 +195,14 @@ class PersonalPage extends Component {
           dateOfLastEvaluation:'',
 
           // Army Physical Fitness Test(APFT)
+          apftDate: '',
+          apftDateExpire: '',
           total:'',
           passFail:'',
           pushups:'',
           situps:'',
           run:'',
-          alternateRun:'',
+          alternateRunScore:'',
           alternateEvent:'',
           profileType:'',
           ifTempExperationDate:'',
@@ -280,7 +286,59 @@ class PersonalPage extends Component {
               </label>
 
               <label htmlFor="state">State:
-              <input name="state" value={this.state.state} onChange={e => this.handleInput(e)} />
+              <select name="state" value={this.state.state} onChange={e => this.handleInput(e)}>
+              	<option value="AL">Alabama</option>
+              	<option value="AK">Alaska</option>
+              	<option value="AZ">Arizona</option>
+              	<option value="AR">Arkansas</option>
+              	<option value="CA">California</option>
+              	<option value="CO">Colorado</option>
+              	<option value="CT">Connecticut</option>
+              	<option value="DE">Delaware</option>
+              	<option value="DC">District Of Columbia</option>
+              	<option value="FL">Florida</option>
+              	<option value="GA">Georgia</option>
+              	<option value="HI">Hawaii</option>
+              	<option value="ID">Idaho</option>
+              	<option value="IL">Illinois</option>
+              	<option value="IN">Indiana</option>
+              	<option value="IA">Iowa</option>
+              	<option value="KS">Kansas</option>
+              	<option value="KY">Kentucky</option>
+              	<option value="LA">Louisiana</option>
+              	<option value="ME">Maine</option>
+              	<option value="MD">Maryland</option>
+              	<option value="MA">Massachusetts</option>
+              	<option value="MI">Michigan</option>
+              	<option value="MN">Minnesota</option>
+              	<option value="MS">Mississippi</option>
+              	<option value="MO">Missouri</option>
+              	<option value="MT">Montana</option>
+              	<option value="NE">Nebraska</option>
+              	<option value="NV">Nevada</option>
+              	<option value="NH">New Hampshire</option>
+              	<option value="NJ">New Jersey</option>
+              	<option value="NM">New Mexico</option>
+              	<option value="NY">New York</option>
+              	<option value="NC">North Carolina</option>
+              	<option value="ND">North Dakota</option>
+              	<option value="OH">Ohio</option>
+              	<option value="OK">Oklahoma</option>
+              	<option value="OR">Oregon</option>
+              	<option value="PA">Pennsylvania</option>
+              	<option value="RI">Rhode Island</option>
+              	<option value="SC">South Carolina</option>
+              	<option value="SD">South Dakota</option>
+              	<option value="TN">Tennessee</option>
+              	<option value="TX">Texas</option>
+              	<option value="UT">Utah</option>
+              	<option value="VT">Vermont</option>
+              	<option value="VA">Virginia</option>
+              	<option value="WA">Washington</option>
+              	<option value="WV">West Virginia</option>
+              	<option value="WI">Wisconsin</option>
+              	<option value="WY">Wyoming</option>
+              </select>
               </label>
 
               <label htmlFor="zip">Zip Code:
@@ -288,7 +346,7 @@ class PersonalPage extends Component {
               </label>
 
             <h1>Emergency Contact </h1>
-              <label htmlFor="emergencyName"> Name:
+              <label htmlFor="emergencyName">Name:
               <input name="emergencyName" value={this.state.emergencyName} onChange={e => this.handleInput(e)} />
               </label>
 
@@ -301,7 +359,59 @@ class PersonalPage extends Component {
               </label>
 
               <label htmlFor="emergencyState">State:
-              <input name="emergencyState" value={this.state.emergencyState} onChange={e => this.handleInput(e)} />
+              <select name="emergencyState" value={this.state.emergencyState} onChange={e => this.handleInput(e)}>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+              </select>
               </label>
 
               <label htmlFor="emergencyZip">Zip Code:
@@ -325,39 +435,47 @@ class PersonalPage extends Component {
               <input name="investigationType" value={this.state.investigationType} onChange={e => this.handleInput(e)} />
               </label>
 
-              <label htmlFor="investigationClosed">Investigation Closed:
-              <input name="investigationClosed" value={this.state.investigationClosed} onChange={e => this.handleInput(e)} />
+              <label htmlFor="investigationClosed">Investigation Closed Date:
+              <input type="date" name="investigationClosed" value={this.state.investigationClosed} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="experationDate">Experation Date:
-              <input name="experationDate" value={this.state.experationDate} onChange={e => this.handleInput(e)} />
+              <input type="date" name="experationDate" value={this.state.experationDate} onChange={e => this.handleInput(e)} />
               </label>
 
             <h1>Enlistment </h1>
               <label htmlFor="dateOfEnlistment">Date Of Enlistment:
-              <input name="dateOfEnlistment" value={this.state.dateOfEnlistment} onChange={e => this.handleInput(e)} />
+              <input type="date" name="dateOfEnlistment" value={this.state.dateOfEnlistment} onChange={e => this.handleInput(e)} />
               </label>
 
-              <label htmlFor="ets">ETS:
-              <input name="ets" value={this.state.ets} onChange={e => this.handleInput(e)} />
+              <label htmlFor="ets">ETS Date:
+              <input type="date" name="ets" value={this.state.ets} onChange={e => this.handleInput(e)} />
               </label>
 
             <h1>Evaluation</h1>
               <label htmlFor="dateOfLastEvaluation">Date Of Last Evaluation:
-              <input name="dateOfLastEvaluation" value={this.state.dateOfLastEvaluation} onChange={e => this.handleInput(e)} />
+              <input type="date" name="dateOfLastEvaluation" value={this.state.dateOfLastEvaluation} onChange={e => this.handleInput(e)} />
               </label>
 
             <h1>Army Physical Fitness Test(APFT)</h1>
+              <label htmlFor="apftDate">Army PFT Date:
+              <input type="date" name="apftDate" value={this.state.apftDate} onChange={e => this.handleInput(e)} />
+              </label>
+
+              <label htmlFor="apftDateExpire">Army PFT Experation Date:
+              <input type="date" name="apftDateExpire" value={this.state.total} onChange={e => this.handleInput(e)} />
+              </label>
+
               <label htmlFor="total">Total:
               <input name="total" value={this.state.total} onChange={e => this.handleInput(e)} />
               </label>
 
-              <label htmlFor="zip">Zip Code:
-              <input name="zip" value={this.state.zip} onChange={e => this.handleInput(e)} />
-              </label>
-
               <label htmlFor="passFail">Did you Pass or Fail:
-              <input name="passFail" value={this.state.passFail} onChange={e => this.handleInput(e)} />
+              <select name="passFail" value={this.state.passFail} onChange={e => this.handleInput(e)}>
+                <option value="notApplicable">Not Applicable</option>
+                <option value="pass">Pass</option>
+                <option value="fail">Fail</option>
+              </select>
               </label>
 
               <label htmlFor="pushups">Pushups Score:
@@ -372,53 +490,62 @@ class PersonalPage extends Component {
               <input name="run" value={this.state.run} onChange={e => this.handleInput(e)} />
               </label>
 
-              <label htmlFor="alternateRun">Alternate Run:
-              <input name="alternateRun" value={this.state.alternateRun} onChange={e => this.handleInput(e)} />
+              <label htmlFor="alternateRunScore">Alternate Run Score:
+              <input name="alternateRunScore" value={this.state.alternateRunScore} onChange={e => this.handleInput(e)} />
               </label>
 
-              <label htmlFor="alternateEvent">Alternate Event:
-              <input name="alternateEvent" value={this.state.alternateEvent} onChange={e => this.handleInput(e)} />
+              <label htmlFor="alternateEvent">Alternate Run Type:
+              <select name="alternateEvent" value={this.state.alternateEvent} onChange={e => this.handleInput(e)}>
+                <option value="notApplicable">Not Applicable</option>
+                <option value="walk">Walk</option>
+                <option value="bike">Bike</option>
+                <option value="swim">Swim</option>
+              </select>
               </label>
+
 
               <label htmlFor="profileType">Profile Type:
-              <input name="profileType" value={this.state.profileType} onChange={e => this.handleInput(e)} />
+              <select name="profileType" value={this.state.profileType} onChange={e => this.handleInput(e)}>
+                <option value="perm">Perm</option>
+                <option value="temp">Temp</option>
+              </select>
               </label>
 
               <label htmlFor="ifTempExperationDate">Temp Experation Date:
-              <input name="ifTempExperationDate" value={this.state.ifTempExperationDate} onChange={e => this.handleInput(e)} />
+              <input type="date" name="ifTempExperationDate" value={this.state.ifTempExperationDate} onChange={e => this.handleInput(e)} />
               </label>
 
             <h1>NCOES</h1>
               <label htmlFor="ssdI">SSDI:
-              <input name="ssdI" value={this.state.ssdI} onChange={e => this.handleInput(e)} />
+              <input type="date" name="ssdI" value={this.state.ssdI} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="blc">BLC:
-              <input name="blc" value={this.state.blc} onChange={e => this.handleInput(e)} />
+              <input type="date" name="blc" value={this.state.blc} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="ssdII">SSDII:
-              <input name="ssdII" value={this.state.ssdII} onChange={e => this.handleInput(e)} />
+              <input type="date" name="ssdII" value={this.state.ssdII} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="alc">ALC:
-              <input name="alc" value={this.state.alc} onChange={e => this.handleInput(e)} />
+              <input type="date" name="alc" value={this.state.alc} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="ssdIII">SSDIII:
-              <input name="ssdIII" value={this.state.ssdIII} onChange={e => this.handleInput(e)} />
+              <input type="date" name="ssdIII" value={this.state.ssdIII} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="slc">SLC:
-              <input name="slc" value={this.state.slc} onChange={e => this.handleInput(e)} />
+              <input type="date" name="slc" value={this.state.slc} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="ssDIV">SSDIV:
-              <input name="ssDIV" value={this.state.ssDIV} onChange={e => this.handleInput(e)} />
+              <input type="date" name="ssDIV" value={this.state.ssDIV} onChange={e => this.handleInput(e)} />
               </label>
 
-              <label htmlFor="sgm">S:
-              <input name="sgm" value={this.state.sgm} onChange={e => this.handleInput(e)} />
+              <label htmlFor="sgm">SGM:
+              <input type="date" name="sgm" value={this.state.sgm} onChange={e => this.handleInput(e)} />
               </label>
 
             <h1>Notes</h1>
