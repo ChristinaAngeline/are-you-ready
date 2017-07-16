@@ -229,7 +229,6 @@ class PersonalPage extends Component {
           <h1>Personal Information</h1>
             <form onSubmit={e => this.handleSubmit(e)}>
               <label htmlFor="rank">Rank:
-
                 <select name="rank" value={this.state.rank} onChange={e => this.handleInput(e)}>
                   <option value="e1">E1</option>
                   <option value="e2">E2</option>
@@ -240,20 +239,19 @@ class PersonalPage extends Component {
                   <option value="e7">E7</option>
                   <option value="e8">E8</option>
                   <option value="e9">E9</option>
-
                 </select>
               </label>
 
               <label htmlFor="lastName">Last Name:
-              <input name="lastName" value={this.state.lastName} onChange={e => this.handleInput(e)} />
+                <input name="lastName" value={this.state.lastName} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="firstName">First Name:
-              <input name="firstName" value={this.state.firstName} onChange={e => this.handleInput(e)} />
+                <input name="firstName" value={this.state.firstName} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="mos">MOS:
-              <input name="mos" value={this.state.mos} onChange={e => this.handleInput(e)} />
+                <input name="mos" value={this.state.mos} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="gender">Gender
@@ -265,24 +263,24 @@ class PersonalPage extends Component {
 
             <h1>Contact Info</h1>
               <label htmlFor="phoneNumber">Phone Number:
-              <input type="number" name="phoneNumber" value={this.state.phoneNumber} onChange={e => this.handleInput(e)} />
+                <input type="number" name="phoneNumber" value={this.state.phoneNumber} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="militaryEmail">Military Email:
-              <input type="email" name="militaryEmail" value={this.state.militaryEmail} onChange={e => this.handleInput(e)} />
+                <input type="email" name="militaryEmail" value={this.state.militaryEmail} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="civilianEmail">Civilian Email:
-              <input type="email" name="civilianEmail" value={this.state.civilianEmail} onChange={e => this.handleInput(e)} />
+                <input type="email" name="civilianEmail" value={this.state.civilianEmail} onChange={e => this.handleInput(e)} />
               </label>
 
             <h1>Street Address: </h1>
               <label htmlFor="street">Street:
-              <input type="street-address" name="street" value={this.state.street} onChange={e => this.handleInput(e)} />
+                <input type="street-address" name="street" value={this.state.street} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="city">City:
-              <input name="city" value={this.state.city} onChange={e => this.handleInput(e)} />
+                <input name="city" value={this.state.city} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="state">State:
@@ -503,7 +501,6 @@ class PersonalPage extends Component {
               </select>
               </label>
 
-
               <label htmlFor="profileType">Profile Type:
               <select name="profileType" value={this.state.profileType} onChange={e => this.handleInput(e)}>
                 <option value="perm">Perm</option>
@@ -553,7 +550,9 @@ class PersonalPage extends Component {
               <input name="notes" value={this.state.notes} onChange={e => this.handleInput(e)} />
               </label>
 
+              <span>
               <input type="submit" />
+              </span>
             </form>
         </section>
       </div>

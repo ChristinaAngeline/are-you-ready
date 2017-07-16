@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 import React, { Component } from 'react';
-import styles from './Home.css';
+import styles from './login.css';
 
-class HomePage extends Component {
+class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // Sign Up
+      // login
       militaryEmail: '',
       password:''
 
@@ -26,7 +26,7 @@ class HomePage extends Component {
       .ref('/UserInfo')
       .push({
 
-        // Sign Up
+        // login
         militaryEmail: this.state.militaryEmail,
         password: this.state.password
 
@@ -34,9 +34,9 @@ class HomePage extends Component {
 
       .then(() => {
         this.setState({
-          // Sign Up
+          // login
           militaryEmail: '',
-          password:''
+          password: ''
 
         });
       });
@@ -44,23 +44,25 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className={styles.contact}>
+      <div className={styles.login}>
         <section>
-
-         <form onSubmit={this.handleSubmit}>
-            <h1>Sign Up</h1>
-
+        <h1>Login</h1>
+         <form onSubmit={e => this.handleSubmit(e)}>
            <label htmlFor="militaryEmail"> Military Email:
-            <input  type="email" name="militaryEmail" value={this.state.militaryEmail} onChange={this.handleChange} placeholder="Email" />
+            <input type="email" name="militaryEmail" value={this.state.militaryEmail} onChange={this.handleChange} placeholder="Email" />
            </label>
 
            <label htmlFor="password">Password:
-            <input  name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
+            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
            </label>
 
            <span>
+           <button id="btnLogin">Log in</button>
 
-           <button type="submit" value="Submit" onClick={(e) => this.handleClick(e)}> Submit </button>
+           <button id="btnSignUp">Sign up</button>
+
+           <button id="btnLogout">Log out</button>
+
            </span>
 
          </form>
@@ -71,4 +73,4 @@ class HomePage extends Component {
 }
 
 
-export default HomePage;
+export default LoginPage;

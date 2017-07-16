@@ -14,6 +14,7 @@ import PersonalPage from './pages/personal/Personal';
 import FormationPage from './pages/formation/Formation';
 import AttendancePage from './pages/attendance/Attendance';
 import EmployeesPage from './pages/employee/Employee';
+import LoginPage from './pages/login/Login';
 
 import './App.css';
 
@@ -25,7 +26,6 @@ firebase.initializeApp({
   storageBucket: "areyouready-f2120.appspot.com",
   messagingSenderId: "192825788710"
 });
-
 
 
 const router = routerMiddleware(browserHistory);
@@ -42,6 +42,7 @@ const store = createStore(
 
 const history = syncHistoryWithStore(browserHistory, store);
 
+
 render(
   <Router history={history}>
     <Route path={CONFIG.baseHref} component={MainTemplate}>
@@ -50,6 +51,7 @@ render(
       <Route component={FormationPage} path="formation" />
       <Route component={AttendancePage} path="attendance" />
       <Route component={EmployeesPage} path="employee" />
+      <Route component={LoginPage} path="login" />
     </Route>
   </Router>,
   document.getElementById('app')
