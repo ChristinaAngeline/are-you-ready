@@ -1,6 +1,5 @@
 import firebase from 'firebase';
 import React, { Component } from 'react';
-
 import styles from './Personal.css';
 
 class PersonalPage extends Component {
@@ -73,6 +72,8 @@ class PersonalPage extends Component {
       notes: ''
 
     };
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
     handleInput({ target: {name, value}}) {
@@ -82,8 +83,8 @@ class PersonalPage extends Component {
     }
 
     handleSubmit(e) {
-
       e.preventDefault();
+      this.setState({ loading: true});
       firebase.database()
       .ref('/UserInfo')
       .push({
@@ -228,6 +229,7 @@ class PersonalPage extends Component {
         <section>
           <h1>Personal Information</h1>
             <form onSubmit={e => this.handleSubmit(e)}>
+
               <label htmlFor="rank">Rank:
                 <select name="rank" value={this.state.rank} onChange={e => this.handleInput(e)}>
                   <option value="e1">E1</option>
@@ -461,7 +463,7 @@ class PersonalPage extends Component {
               </label>
 
               <label htmlFor="apftDateExpire">Army PFT Experation Date:
-              <input type="date" name="apftDateExpire" value={this.state.total} onChange={e => this.handleInput(e)} />
+              <input type="date" name="apftDateExpire" value={this.state.apftDateExpire} onChange={e => this.handleInput(e)} />
               </label>
 
               <label htmlFor="total">Total:
@@ -550,10 +552,9 @@ class PersonalPage extends Component {
               <input name="notes" value={this.state.notes} onChange={e => this.handleInput(e)} />
               </label>
 
-              <span>
               <input type="submit" />
-              </span>
             </form>
+
         </section>
       </div>
     );

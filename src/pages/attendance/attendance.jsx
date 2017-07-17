@@ -10,12 +10,17 @@ class AttendancePage extends Component {
       lastName: '',
       firstName: '',
       mos: '',
-      checkinStatus: '',
+      checkinStatus: true,
       comments: ''
     };
+    this.handleInput = this.handleInput.bind(this);
   }
 
-    handleInput({ target: {name, value}}) {
+    handleInput(event) {
+      const target = event.target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+      const name = target.name;
+
       this.setState({
         [name]: value
       });
@@ -26,7 +31,7 @@ class AttendancePage extends Component {
       e.preventDefault();
       firebase.database()
       .ref('/UserInfo')
-      .push({
+      .get({
         rank: this.state.rank,
         lastName: this.state.lastName,
         firstName: this.state.firstName,
@@ -61,7 +66,8 @@ class AttendancePage extends Component {
                     <th name="lastName" value={this.state.lastName} onChange={e => this.handleInput(e)}>Last Name </th>
                     <th name="firstName" value={this.state.firstName} onChange={e => this.handleInput(e)}>First Name </th>
                     <th name="mos" value={this.state.mos} onChange={e => this.handleInput(e)}>MOS</th>
-                    <th name="checkinStatus" value={this.state.checkinStatus} onChange={e => this.handleInput(e)}> Check in Status </th>
+                    <th name="checkinStatus" value={this.state.checkinStatus} onChange={e => this.handleInput(e)}>Check in Status
+                    </th>
                     <th name="comments" value={this.state.comments} onChange={e => this.handleInput(e)}>Comments</th>
                 </tr>
               </thead>
@@ -72,48 +78,30 @@ class AttendancePage extends Component {
                     <td name="lastName" value={this.state.lastName} >Angeline </td>
                     <td name="firstName" value={this.state.firstName} >Christina </td>
                     <td name="mos" value={this.state.mos} >0621 </td>
-                    <td name="checkinStatus" value={this.state.checkinStatus} >Here</td>
-                    <td name="comments" value={this.state.comments} > </td>
+                    <td name="checkinStatus" value={this.state.checkinStatus} onChange={e => this.handleInput(e)}>
+                    <label>
+                        <input
+                          name="checkinStatus"
+                          type="checkbox"
+                          checked={this.state.checkinStatus}
+                          onChange={this.handleInput} />
+                    </label>
+                    </td>
+                    <td name="comments" value={this.state.comments} >
+                    <label>
+                        <input
+                          name="comment"
+                          type="text"
+                          checked={this.state.checkinStatus}
+                          onChange={this.handleInput} />
+                    </label> </td>
                 </tr>
 
-                <tr>
-                    <td name="rank" value={this.state.rank} >E5 </td>
-                    <td name="lastName" value={this.state.lastName} >Angeline </td>
-                    <td name="firstName" value={this.state.firstName} >Christina </td>
-                    <td name="mos" value={this.state.mos} >0621 </td>
-                    <td name="checkinStatus" value={this.state.checkinStatus} >Here</td>
-                    <td name="comments" value={this.state.comments} > </td>
-                </tr>
-
-                <tr>
-                    <td name="rank" value={this.state.rank} >E5 </td>
-                    <td name="lastName" value={this.state.lastName} >Angeline </td>
-                    <td name="firstName" value={this.state.firstName} >Christina </td>
-                    <td name="mos" value={this.state.mos} >0621 </td>
-                    <td name="checkinStatus" value={this.state.checkinStatus} >Here</td>
-                    <td name="comments" value={this.state.comments} > </td>
-                </tr>
-
-                <tr>
-                    <td name="rank" value={this.state.rank} >E5 </td>
-                    <td name="lastName" value={this.state.lastName} >Angeline </td>
-                    <td name="firstName" value={this.state.firstName} >Christina </td>
-                    <td name="mos" value={this.state.mos} >0621 </td>
-                    <td name="checkinStatus" value={this.state.checkinStatus} >Here</td>
-                    <td name="comments" value={this.state.comments} > </td>
-                </tr>
-
-                <tr>
-                    <td name="rank" value={this.state.rank} >E5 </td>
-                    <td name="lastName" value={this.state.lastName} >Angeline </td>
-                    <td name="firstName" value={this.state.firstName} >Christina </td>
-                    <td name="mos" value={this.state.mos} >0621 </td>
-                    <td name="checkinStatus" value={this.state.checkinStatus} >Here</td>
-                    <td name="comments" value={this.state.comments} > </td>
-                </tr>
               </tbody>
 
             </table>
+            <input type="submit" value="submit" />
+
         </section>
       </div>
     );

@@ -6,64 +6,67 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // Sign Up
-      militaryEmail: '',
-      password:''
-
+      // login
+      email: '',
+      password:'',
+      error:'',
+      loading: false,
+      success: false
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    //this.btnSignUp = this.handleChange.bind(this);
   }
 
-    handleInput({ target: {name, value}}) {
+  handleChange({ target: {name, value}}) {
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState({ loading: true});
+    firebase.database().ref('/UserInfo').push({
+      militaryEmail: this.state.email,
+      password: this.state.password
+
+    })
+
+    .then(() => {
       this.setState({
-        [name]: value
+        // login
+        militaryEmail: '',
+        password: '',
+        loading: false,
+        success: true
       });
-    }
-
-    handleSubmit(e) {
-
-      e.preventDefault();
-      firebase.database()
-      .ref('/UserInfo')
-      .push({
-
-        // Sign Up
-        militaryEmail: this.state.militaryEmail,
-        password: this.state.password
-
-      })
-
-      .then(() => {
-        this.setState({
-          // Sign Up
-          militaryEmail: '',
-          password:''
-
-        });
-      });
-    }
+    });
+  }
 
   render() {
     return (
       <div className={styles.contact}>
         <section>
-
-         <form onSubmit={this.handleSubmit}>
-            <h1>Sign Up</h1>
-
-           <label htmlFor="militaryEmail"> Military Email:
-            <input  type="email" name="militaryEmail" value={this.state.militaryEmail} onChange={this.handleChange} placeholder="Email" />
+        <h1>Create a New Account</h1>
+        {!this.state.success && (
+         <form onSubmit={e => this.handleSubmit(e)} className={styles.container}>
+           <label htmlFor="email"> Military Email:
+            <input  type="text" name="email" value={this.state.email} onChange={this.handleChange} placeholder="Email" />
            </label>
 
            <label htmlFor="password">Password:
             <input  name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" />
            </label>
 
-           <span>
-
-           <button type="submit" value="Submit" onClick={(e) => this.handleClick(e)}> Submit </button>
-           </span>
-
+           <button disabled={this.state.loading}> Sign Up</button>
          </form>
+       )}
+       {this.state.success && (
+         <div className={styles.success}>
+          <h3>Thank you for Signing Up</h3>
+        </div>
+       )}
         </section>
       </div>
     );
