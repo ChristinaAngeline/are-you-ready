@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import React from 'react';
-//thunk for middlew
+
 import thunk from 'redux-thunk';
 
 import { applyMiddleware, combineReducers, createStore } from 'redux';

@@ -11,6 +11,10 @@ class AttendancePage extends Component {
       firstName: '',
       mos: '',
       checkinStatus: true,
+      checkinStatus1: true,
+      checkinStatus2: true,
+      checkinStatus3: true,
+      checkinStatus4: true,
       comments: ''
     };
     this.handleInput = this.handleInput.bind(this);
@@ -37,6 +41,10 @@ class AttendancePage extends Component {
         firstName: this.state.firstName,
         mos: this.state.mos,
         checkinStatus: this.state.checkinStatus,
+        checkinStatus1: this.state.checkinStatus1,
+        checkinStatus2: this.state.checkinStatus2,
+        checkinStatus3: this.state.checkinStatus3,
+        checkinStatus4: this.state.checkinStatus4,
         comments: this.state.comments
 
       })
@@ -48,6 +56,10 @@ class AttendancePage extends Component {
           firstName: '',
           mos: '',
           checkinStatus: '',
+          checkinStatus1: '',
+          checkinStatus2: '',
+          checkinStatus3: '',
+          checkinStatus4: '',
           comments: ''
         });
       });
@@ -93,6 +105,103 @@ class AttendancePage extends Component {
                           name="comment"
                           type="text"
                           checked={this.state.checkinStatus}
+                          onChange={this.handleInput} />
+                    </label> </td>
+                </tr>
+
+                <tr>
+                    <td name="rank" value={this.state.rank} >E5 </td>
+                    <td name="lastName" value={this.state.lastName} >Jane </td>
+                    <td name="firstName" value={this.state.firstName} >Mary </td>
+                    <td name="mos" value={this.state.mos} >0311 </td>
+                    <td name="checkinStatus1" value={this.state.checkinStatus1} onChange={e => this.handleInput(e)}>
+                    <label>
+                        <input
+                          name="checkinStatus1"
+                          type="checkbox"
+                          checked={this.state.checkinStatus1}
+                          onChange={this.handleInput} />
+                    </label>
+                    </td>
+                    <td name="comments" value={this.state.comments} >
+                    <label>
+                        <input
+                          name="comment"
+                          type="text"
+                          checked={this.state.checkinStatus1}
+                          onChange={this.handleInput} />
+                    </label> </td>
+                </tr>
+
+                <tr>
+                    <td name="rank" value={this.state.rank} >E5 </td>
+                    <td name="lastName" value={this.state.lastName} >Smith </td>
+                    <td name="firstName" value={this.state.firstName} >John </td>
+                    <td name="mos" value={this.state.mos} >0411 </td>
+                    <td name="checkinStatus2" value={this.state.checkinStatus2} onChange={e => this.handleInput(e)}>
+                    <label>
+                        <input
+                          name="checkinStatus2"
+                          type="checkbox"
+                          checked={this.state.checkinStatus2}
+                          onChange={this.handleInput} />
+                    </label>
+                    </td>
+                    <td name="comments" value={this.state.comments} >
+                    <label>
+                        <input
+                          name="comment"
+                          type="text"
+                          checked={this.state.checkinStatus2}
+                          onChange={this.handleInput} />
+                    </label> </td>
+                </tr>
+
+                <tr>
+                    <td name="rank" value={this.state.rank} >E5 </td>
+                    <td name="lastName" value={this.state.lastName} >Kent </td>
+                    <td name="firstName" value={this.state.firstName} >Clark </td>
+                    <td name="mos" value={this.state.mos} >0311 </td>
+                    <td name="checkinStatus3" value={this.state.checkinStatus3} onChange={e => this.handleInput(e)}>
+                    <label>
+                        <input
+                          name="checkinStatus3"
+                          type="checkbox"
+                          checked={this.state.checkinStatus3}
+                          onChange={this.handleInput} />
+                    </label>
+                    </td>
+                    <td name="comments" value={this.state.comments} >
+                     <label>
+                        <input
+                          name="comment"
+                          type="text"
+                          checked={this.state.checkinStatus3}
+                          onChange={this.handleInput} />
+                     </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td name="rank" value={this.state.rank} >E5 </td>
+                    <td name="lastName" value={this.state.lastName} >Wayne </td>
+                    <td name="firstName" value={this.state.firstName} >Bruce </td>
+                    <td name="mos" value={this.state.mos} >0311 </td>
+                    <td name="checkinStatus4" value={this.state.checkinStatus4} onChange={e => this.handleInput(e)}>
+                    <label>
+                        <input
+                          name="checkinStatus4"
+                          type="checkbox"
+                          checked={this.state.checkinStatus4}
+                          onChange={this.handleInput} />
+                    </label>
+                    </td>
+                    <td name="comments" value={this.state.comments} >
+                    <label>
+                        <input
+                          name="comment"
+                          type="text"
+                          checked={this.state.checkinStatus4}
                           onChange={this.handleInput} />
                     </label> </td>
                 </tr>
