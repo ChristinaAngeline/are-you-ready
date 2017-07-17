@@ -2,3 +2,11 @@
   display: flex;
   flex-flow: column wrap;
 }
+
+input[type=submit] {
+    width: 20em;  height: 2em;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    border-radius: 12px;
+}

@@ -1,4 +1,13 @@
 .home .container {
   display: flex;
   flex-flow: column wrap;
+  
+}
+
+button {
+    width: 20em;  height: 2em;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    border-radius: 12px;
 }

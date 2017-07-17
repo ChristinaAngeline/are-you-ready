@@ -44,9 +44,10 @@ class EmployeesPage extends Component {
       <div className={styles.employee}>
         <section>
           <h1>Employee Information</h1>
+
           <ul>{this.state.usersFirstNames}</ul>
           <ul>{this.state.usersLastNames}</ul>
-          <p>This is some text...</p>
+      
         </section>
       </div>
     );

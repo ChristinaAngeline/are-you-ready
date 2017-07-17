@@ -46,7 +46,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className={styles.contact}>
+      <div className={styles.home}>
         <section>
         <h1>Create a New Account</h1>
         {!this.state.success && (
