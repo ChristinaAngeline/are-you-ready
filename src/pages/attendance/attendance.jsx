@@ -71,7 +71,7 @@ class AttendancePage extends Component {
         <section>
           <h1>Attendance Information</h1>
             <table onSubmit={e => this.handleSubmit(e)}>
-            <colgroup span="6"></colgroup>
+  
               <thead>
                 <tr>
                     <th name="rank" value={this.state.rank} onChange={e => this.handleInput(e)}>Rank </th>
